@@ -5,25 +5,35 @@ JavaScript - fill in the table below by writing code to perform the same tasks u
 
 | Task | Javascript | Ruby |
 | ---- | ---------- | ---- |
-| Create an array literal | `var arrayThing = [ 1, 2, "three" ]` | `` |
-| Read a single item in an array | `arrayThing[0]` | `` |
-| Add an item to an array | `arrayThing.push("hi")` | `` |
-| Delete an item from an array | `arrayThing.splice(2, 1)` | `` |
-| Update an element in an array | `arrayThing[0] = "one"` | `` |
-| Create an object/hash | `var objThing = { name: "Dude", email: "thedude@dude.dude"}` | `` |
-| Read a single item in a hash | `objThing.name` | `` |
-| Add an item to a hash | `objThing.age = 32` | `` |
-| Delete an item from a hash | `delete objThing.name` | `` |
-| Update an element in a hash | `objThing.age = 12` | `` |
+| Create an array literal | `var arrayThing = [ 1, 2, "three" ]` | `array_thing = [1, 2, "three"]` |
+| Read a single item in an array | `arrayThing[0]` | `array_thing[0]` |
+| Add an item to an array | `arrayThing.push("hi")` | `array_thing.push("hi")` |
+| Delete an item from an array | `arrayThing.splice(2, 1)` | `array_thing.slice!(2, 1)` |
+| Update an element in an array | `arrayThing[0] = "one"` | `array_thing[0] = "one"` |
+| Create an object/hash | `var objThing = { name: "Dude", email: "thedude@dude.dude"}` | `obj_thing = { name: "Dude", email: "thedude@dude.dude"}` |
+| Read a single item in a hash | `objThing.name` | `obj_thing[:name]` |
+| Add an item to a hash | `objThing.age = 32` | `obj_thing[:age] = 32` |
+| Delete an item from a hash | `delete objThing.name` | `obj_thing.delete(:name)` |
+| Update an element in a hash | `objThing.age = 12` | `obj_thing[:age] = 12` |
 
 Fill out the table below by writing Ruby code to accomplish the following tasks:
 
 | Task | Javascript | Ruby |
 | ---- | ---------- | ---- |
-| Print out all numbers from 1-10 | `for (i = 1; i < 11; i++) {  console.log(i); }` | `` |
-| Print out all the names in an array of objects  | `otherArray.forEach(function(el){ console.log(el.name) });` | `` |
-| Do something if a condition evaluates to `true` | `if ( aVariable === true ) { /* do a thing */ }` | `` |
-| Perform logic based on the value of a variable (control flow) | `if ( aVariable === 1 ) { /* do a certain thing */ } else if (aVariable === 2) { /* do a different thing */ } else { /* perform a default action */ }` | `` |
+| Print out all numbers from 1-10 | `for (i = 1; i < 11; i++) {  console.log(i); }` | `for x in 1..10 do puts x.to_s end` |
+| Print out all the names in an array of objects  | `otherArray.forEach(function(el){ console.log(el.name) });` | `other_array.each do |hash|
+    puts hash[:name]
+end` |
+| Do something if a condition evaluates to `true` | `if ( aVariable === true ) { /* do a thing */ }` | `if a_variable == true 
+    puts true
+end` |
+| Perform logic based on the value of a variable (control flow) | `if ( aVariable === 1 ) { /* do a certain thing */ } else if (aVariable === 2) { /* do a different thing */ } else { /* perform a default action */ }` | `if a_variable == true 
+    puts a_variable
+elsif a_variable == false
+    puts a_variable.to_s*2
+else
+    puts "idk"
+end ` |
 
 ## Exercise By the Numbers
 
