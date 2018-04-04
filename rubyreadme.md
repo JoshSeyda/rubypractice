@@ -67,12 +67,35 @@ end
             {toyota: "Prius", tesla: "Model S"}
         ```
 
+        ```ruby
+
+```ruby
+def car_maker(make, model)
+    car = Hash.new
+    for x in 0..make.length-1
+        car[make[x].capitalize] = model[x]
+    end
+    return car
+end
+```
 #### Guessing Game
 
 - Write a simple command line program in Ruby that chooses a random number between one and ten and asks the user to guess it.
   - If the user guesses incorrectly, the program should tell them to guess again.
   - If they guess correctly, the program should congratulate them and tell them how many guesses it took them to get to the answer.
 
+```ruby
+random_number = 1 + rand(10)
+puts "Guess a number!"
+user_input = gets.chomp.to_i
+counter = 1
+  until user_input == random_number
+    puts "Try again!"
+    user_input = gets.chomp.to_i
+    counter+=1
+  end 
+puts "Good job, you did it on try number #{counter}!"
+```
 #### Transmogrifier
 
 - Write a method called transmogrifier that accepts 3 numbers as input arguments and returns the transmogrified result. The common mathematical operation known as transmogrification is when you add the first two numbers and multiply the sum by the third number

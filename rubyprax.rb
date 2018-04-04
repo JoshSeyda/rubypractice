@@ -2,7 +2,7 @@
 # array_thing.push("hi")
 # array_thing.slice!(2, 1)
 
-obj_thing = { name: "Dude", email: "thedude@dude.dude"}
+# obj_thing = { name: "Dude", email: "thedude@dude.dude"}
 # obj_thing[:age] = 32
 # obj_thing.delete(:name)
 # puts obj_thing.to_s
@@ -28,14 +28,38 @@ obj_thing = { name: "Dude", email: "thedude@dude.dude"}
 # merica("Deep fried icecream.")
 
 # Create a method called maxValue to find the maximum value in an array of numbers. For instance: `[100,10,-1000]` should return 100. **Do not use Ruby's built-in `.max` function.**
-def max_value(arr)
-  highest = arr[0]
-  for num in arr
-    if num > arr[0]
-      highest = num
-    end
-  end
-  return highest
-end
+# def max_value(arr)
+#   highest = arr[0]
+#   for num in arr
+#     if num > arr[0]
+#       highest = num
+#     end
+#   end
+#   return highest
+# end
 
-max_value([100,10,-1000])
+# max_value([100,10,-1000])
+# make = [:toyota, :tesla]
+# model = ["Prius", "Model S"]
+#    # {toyota: "Prius", tesla: "Model S"}
+# def car_maker(make, model)
+#     car = Hash.new
+#     for x in 0..make.length-1
+#         car[make[x].capitalize] = model[x]
+#     end
+#     puts car.to_s
+# end
+# car_maker(make, model)
+
+random_number = Random.new
+random_number.rand(1..10)
+puts "Guess a number!"
+user_input = gets.chomp.to_i
+counter = 1
+if user_input
+  until user_input == random_number
+    puts "try again!"
+    counter+=1
+  end 
+end
+puts "Good job, you did it in #{counter} tries"
