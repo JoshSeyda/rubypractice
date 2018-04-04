@@ -56,26 +56,24 @@ end
 
 - Create a method called conversion that takes two arguments - both of them arrays. Inside of the method, combine the arrays using the items from the first array as keys and the second array as values. For example, when these two arrays are supplied as arguments:
 
-        ```ruby
-            [:toyota, :tesla]
-            ["Prius", "Model S"]
-        ```
+```ruby
+    [:toyota, :tesla]
+    ["Prius", "Model S"]
+```
 
-        they should return a hash like so:
+- They should return a hash like so:
 
-        ```ruby
-            {toyota: "Prius", tesla: "Model S"}
-        ```
-
-        ```ruby
+```ruby
+    {toyota: "Prius", tesla: "Model S"}
+```
 
 ```ruby
 def car_maker(make, model)
-    car = Hash.new
-    for x in 0..make.length-1
-        car[make[x].capitalize] = model[x]
-    end
-    return car
+  car = Hash.new
+  for x in 0..make.length-1
+    car[make[x].capitalize] = model[x]
+  end
+  return car
 end
 ```
 #### Guessing Game
@@ -93,20 +91,40 @@ counter = 1
     puts "Try again!"
     user_input = gets.chomp.to_i
     counter+=1
-  end 
+  end
 puts "Good job, you did it on try number #{counter}!"
 ```
+
 #### Transmogrifier
 
 - Write a method called transmogrifier that accepts 3 numbers as input arguments and returns the transmogrified result. The common mathematical operation known as transmogrification is when you add the first two numbers and multiply the sum by the third number
+
+```ruby
+def transmogrifier(n1, n2, n3)
+  return (n1 + n2) * n3
+end
+```
 
 #### Introduce
 
 Write a method called introduce that accepts two names as strings, and return a string that introduces the two people. For example, introduce("Harry", "Sally") should return the string "Harry, meet Sally." `
 
+```ruby
+def introduce(person1, person2)
+  return "#{person1.capitalize}, meet #{person2.capitalize}"
+end
+```
+
 #### Shout
 
 Write a method called shout that accepts a varying number of strings and puts the uppercased version of each string. For example, shout("is anybody there", "are you listening?") should display "IS ANYBODY THERE" and "ARE YOU LISTENING?" on the screen.
+
+```ruby
+def shout(str, *more)
+  puts str.upcase
+  more.each{ |str| puts str.upcase }
+end
+```
 
 #### Chopped
 

@@ -51,15 +51,26 @@
 # end
 # car_maker(make, model)
 
-random_number = Random.new
-random_number.rand(1..10)
-puts "Guess a number!"
-user_input = gets.chomp.to_i
-counter = 1
-if user_input
-  until user_input == random_number
-    puts "try again!"
-    counter+=1
-  end 
+# random_number = Random.new
+# random_number.rand(1..10)
+# puts "Guess a number!"
+# user_input = gets.chomp.to_i
+# counter = 1
+# if user_input
+#   until user_input == random_number
+#     puts "try again!"
+#     counter+=1
+#   end
+# end
+# puts "Good job, you did it in #{counter} tries"
+
+# def introduce(person1, person2)
+#   return "#{person1.capitalize}, meet #{person2.capitalize}"
+# end
+
+def shout(str, *more)
+  puts str.upcase
+  more.each{ |str| puts str.upcase }
 end
-puts "Good job, you did it in #{counter} tries"
+
+shout("helloooooo", "is there anybody out thereee?", "yooo")
