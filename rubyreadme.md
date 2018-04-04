@@ -30,26 +30,43 @@ Fill out the table below by writing Ruby code to accomplish the following tasks:
 #### 'Merica
 
 - Create a method that takes a string as an argument and adds the phrase "Only in America!" to the end of it
+```ruby
+def merica(str)
+    puts str + " Only in America!"
+end
+merica("Deep fried icecream.")
+```
 
 #### Max Value
 
 - Create a method called maxValue to find the maximum value in an array of numbers. For instance: `[100,10,-1000]` should return 100. **Do not use Ruby's built-in `.max` function.**
+```ruby
+def max_value(arr)
+    highest = arr[0]
+    for num in arr
+      if num > arr[0]
+        highest = num
+      end
+    end
+    return highest
+end
+```
 
 #### Conversion
-    
+
 - Create a method called conversion that takes two arguments - both of them arrays. Inside of the method, combine the arrays using the items from the first array as keys and the second array as values. For example, when these two arrays are supplied as arguments:
-        
+
         ```ruby
             [:toyota, :tesla]
             ["Prius", "Model S"]
         ```
-        
+
         they should return a hash like so:
-        
+
         ```ruby
             {toyota: "Prius", tesla: "Model S"}
         ```
-        
+
 #### Guessing Game
 
 - Write a simple command line program in Ruby that chooses a random number between one and ten and asks the user to guess it.
