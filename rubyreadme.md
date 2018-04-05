@@ -5,72 +5,136 @@ JavaScript - fill in the table below by writing code to perform the same tasks u
 
 | Task | Javascript | Ruby |
 | ---- | ---------- | ---- |
-| Create an array literal | `var arrayThing = [ 1, 2, "three" ]` | `` |
-| Read a single item in an array | `arrayThing[0]` | `` |
-| Add an item to an array | `arrayThing.push("hi")` | `` |
-| Delete an item from an array | `arrayThing.splice(2, 1)` | `` |
-| Update an element in an array | `arrayThing[0] = "one"` | `` |
-| Create an object/hash | `var objThing = { name: "Dude", email: "thedude@dude.dude"}` | `` |
-| Read a single item in a hash | `objThing.name` | `` |
-| Add an item to a hash | `objThing.age = 32` | `` |
-| Delete an item from a hash | `delete objThing.name` | `` |
-| Update an element in a hash | `objThing.age = 12` | `` |
+| Create an array literal | `var arrayThing = [ 1, 2, "three" ]` | `array_thing = [1, 2, "three"]` |
+| Read a single item in an array | `arrayThing[0]` | `array_thing[0]` |
+| Add an item to an array | `arrayThing.push("hi")` | `array_thing.push("hi")` |
+| Delete an item from an array | `arrayThing.splice(2, 1)` | `array_thing.slice!(2, 1)` |
+| Update an element in an array | `arrayThing[0] = "one"` | `array_thing[0] = "one"` |
+| Create an object/hash | `var objThing = { name: "Dude", email: "thedude@dude.dude"}` | `obj_thing = { name: "Dude", email: "thedude@dude.dude"}` |
+| Read a single item in a hash | `objThing.name` | `obj_thing[:name]` |
+| Add an item to a hash | `objThing.age = 32` | `obj_thing[:age] = 32` |
+| Delete an item from a hash | `delete objThing.name` | `obj_thing.delete(:name)` |
+| Update an element in a hash | `objThing.age = 12` | `obj_thing[:age] = 12` |
 
 Fill out the table below by writing Ruby code to accomplish the following tasks:
 
 | Task | Javascript | Ruby |
 | ---- | ---------- | ---- |
-| Print out all numbers from 1-10 | `for (i = 1; i < 11; i++) {  console.log(i); }` | `` |
-| Print out all the names in an array of objects  | `otherArray.forEach(function(el){ console.log(el.name) });` | `` |
-| Do something if a condition evaluates to `true` | `if ( aVariable === true ) { /* do a thing */ }` | `` |
-| Perform logic based on the value of a variable (control flow) | `if ( aVariable === 1 ) { /* do a certain thing */ } else if (aVariable === 2) { /* do a different thing */ } else { /* perform a default action */ }` | `` |
+| Print out all numbers from 1-10 | `for (i = 1; i < 11; i++) {  console.log(i); }` | `for x in 1..10 do puts x.to_s end` |
+| Print out all the names in an array of objects  | `otherArray.forEach(function(el){ console.log(el.name) });` | `other_array.each do \|hash\| puts hash[:name] end` |
+| Do something if a condition evaluates to `true` | `if ( aVariable === true ) { /* do a thing */ }` | `if a_variable == true  puts true end` |
+| Perform logic based on the value of a variable (control flow) | `if ( aVariable === 1 ) { /* do a certain thing */ } else if (aVariable === 2) { /* do a different thing */ } else { /* perform a default action */ }` | `if a_variable == true puts a_variable elsif a_variable == false puts a_variable.to_s*2 else puts "idk" end ` |
 
 ## Exercise By the Numbers
 
 #### 'Merica
 
 - Create a method that takes a string as an argument and adds the phrase "Only in America!" to the end of it
+```ruby
+def merica(str)
+    puts "#{str} Only in America!"
+end
+merica("Deep fried icecream.")
+```
 
 #### Max Value
 
 - Create a method called maxValue to find the maximum value in an array of numbers. For instance: `[100,10,-1000]` should return 100. **Do not use Ruby's built-in `.max` function.**
+```ruby
+def max_value(arr)
+    highest = arr[0]
+    for num in arr
+      if num > arr[0]
+        highest = num
+      end
+    end
+    return highest
+end
+```
 
 #### Conversion
-    
+
 - Create a method called conversion that takes two arguments - both of them arrays. Inside of the method, combine the arrays using the items from the first array as keys and the second array as values. For example, when these two arrays are supplied as arguments:
-        
-        ```ruby
-            [:toyota, :tesla]
-            ["Prius", "Model S"]
-        ```
-        
-        they should return a hash like so:
-        
-        ```ruby
-            {toyota: "Prius", tesla: "Model S"}
-        ```
-        
+
+```ruby
+    [:toyota, :tesla]
+    ["Prius", "Model S"]
+```
+
+- They should return a hash like so:
+
+```ruby
+    {toyota: "Prius", tesla: "Model S"}
+```
+
+```ruby
+def car_maker(make, model)
+  car = Hash.new
+  for x in 0..make.length-1
+    car[make[x].capitalize] = model[x]
+  end
+  return car
+end
+```
 #### Guessing Game
 
 - Write a simple command line program in Ruby that chooses a random number between one and ten and asks the user to guess it.
   - If the user guesses incorrectly, the program should tell them to guess again.
   - If they guess correctly, the program should congratulate them and tell them how many guesses it took them to get to the answer.
 
+```ruby
+random_number = 1 + rand(10)
+puts "Guess a number!"
+user_input = gets.chomp.to_i
+counter = 1
+  until user_input == random_number
+    puts "Try again!"
+    user_input = gets.chomp.to_i
+    counter+=1
+  end
+puts "Good job, you did it on try number #{counter}!"
+```
+
 #### Transmogrifier
 
 - Write a method called transmogrifier that accepts 3 numbers as input arguments and returns the transmogrified result. The common mathematical operation known as transmogrification is when you add the first two numbers and multiply the sum by the third number
+
+```ruby
+def transmogrifier(n1, n2, n3)
+  (n1 + n2) * n3
+end
+```
 
 #### Introduce
 
 Write a method called introduce that accepts two names as strings, and return a string that introduces the two people. For example, introduce("Harry", "Sally") should return the string "Harry, meet Sally." `
 
+```ruby
+def introduce(person1, person2)
+  "#{person1.capitalize}, meet #{person2.capitalize}"
+end
+```
+
 #### Shout
 
 Write a method called shout that accepts a varying number of strings and puts the uppercased version of each string. For example, shout("is anybody there", "are you listening?") should display "IS ANYBODY THERE" and "ARE YOU LISTENING?" on the screen.
 
+```ruby
+def shout(str, *more)
+  puts str.upcase
+  more.each{ |str| puts str.upcase }
+end
+```
+
 #### Chopped
 
 Write a method called chopped that takes an array as an argument and returns an another array with the last element removed.
+
+```ruby
+def chopped(arr)
+  arr.slice(0, arr.length - 1)
+end
+```
 
 #### how_big
 
@@ -79,6 +143,19 @@ Define a method called how_big that takes a string as its lone parameter. The me
 -   "small" if the string is less than 3 characters long
 -   "medium" if it is between 3 and 5 characters long
 -   "big" if it is greater than 5 characters long
+
+```ruby
+def how_big(str)
+  case
+  when str.length < 3
+    p "small"
+  when str.length > 5
+    p "big"
+  else
+    p "medium"
+  end
+end
+```
 
 #### Weatherman
 
@@ -90,25 +167,74 @@ Write a method that takes a weather condition and a temperature. Weather can be 
 -   If the condition is windy or the temperature is cold tell the user, "bundle up!"
 -   If the condition is windy and the temperature is hot, tell the user "Tornado warning!"
 
+```ruby
+def weatherman(cond, temp)
+  p "better stay inside!" if cond == "rainy" && temp == "cold"
+  p "sounds like a gross combination" if cond == "rainy" && temp == "hot"
+  p "maybe best to go swimming" if cond == "sunny" && temp == "hot"
+  p "bundle up!" if cond == "windy" || temp == "cold"
+  p "tornado warning!" if cond == "windy" && temp == "hot"
+end
+```
+
 #### The meaning of Life Write a method called `meaning_of_life` which returns the number 42 to you. Use this method to write a Ruby program that:
 
 -   Asks the user whether they want to know what the meaning of life is
 -   If the user enters 'y', then the meaning of life is displayed to them using the `meaning_of_life` method
 -   Otherwise, the program displays a disappointed message to the user and quits
 
+```ruby
+def meaning_of_life
+  42
+end
+
+puts "do you want to know the meaning of life? (y, n)"
+if gets.chomp == "y"
+  p meaning_of_life
+else
+  puts "you're... one of a kind."
+end
+
+```
+
 #### string_info
 
 Define a method called string_info that takes a string as a parameter and returns a hash with the following key-value pairs:
 
--   original: WHATEVER\_THE\_STRING_IS
+-   original: WHATEVER\_THE\_STRING\_IS
 -   length: WHATEVER\_THE\_LENGTH\_OF\_THE\_STRING\_IS
 -   snaked: the string in all lower case with spaces replaced by underscores, example (for example "Cool Dude" would look like "cool_dude")
+
+```ruby
+def string_info(str)
+  output = {
+    original: str,
+    length: str.length,
+    snaked: str.downcase.split.join('_')
+  }
+end
+```
 
 #### Fives
 
 Write a method called `mult_five?` which accepts one number argument. Returns true if the argument is divisible by five, otherwise return false.
 
-Use this method within a while loop. Within the while loop, ask the user to enter a number or enter the word "quit". If the user enters a number, use mult_five? to check the number and let the user know if their number was divisible by five If the user entered quit, exit the program.
+Use this method within a while loop. Within the while loop, ask the user to enter a number or enter the word "quit". If the user enters a number, use mult_five? to check the number and let the user know if their number was divisible by five. If the user entered quit, exit the program.
+
+```ruby
+def mult_five?(num)
+  num % 5 == 0
+end
+
+puts "enter a number or 'quit'"
+input = gets.chomp
+
+while input != "quit"
+  puts mult_five?(input.to_i)
+  puts "enter a number or 'quit'"
+  input = gets.chomp
+end
+```
 
 #### Calculator
 
@@ -126,6 +252,34 @@ After you've defined these methods, write out the rest of this app:
 -   Ask the user for the second value
 -   Use the four methods you defined to calculate the answer
 -   Display the answer to the user
+
+```ruby
+def add(a, b)
+  a + b
+end
+
+def subtract(a, b)
+  a - b
+end
+
+def multiply(a, b)
+  a * b
+end
+
+def divide(a, b)
+  b == 0 ? 0 : a.to_f / b
+end
+
+puts "what operation do you want to perform? (add / subtract / multiply / divide)"
+operation = gets.downcase.chomp.to_sym
+puts "enter first number"
+num_1 = gets.chomp.to_i
+puts "enter second number"
+num_2 = gets.chomp.to_i
+answer = send(operation, num_1, num_2)
+puts "answer: #{answer}"
+
+```
 
 #### Guessing Game Part Two
 

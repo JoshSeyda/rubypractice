@@ -1,0 +1,61 @@
+ gem pristine gem-wrappers --version 1.3.2
+gem pristine gem-wrappers --version 1.3.2
+gem pristine gem-wrappers --version 1.3.2
+test
+p "i'm 5"
+p "hello"
+name = "Steven"
+p "hello world"
+exit
+irb | tee irb.log
+cd ..
+exit
+p "test"
+print "hi"
+exi
+exiy
+exit
+print "hello"
+p "hi"
+until i > num do
+  puts("Inside the loop i = #{i}")
+  i += 1;
+end
+i = 0
+until i > num do
+  puts("Inside the loop i = #{i}")
+  i += 1;
+end
+num = 100
+i = 0
+until i > num do
+  puts("Inside the loop i = #{i}")
+  i += 1;
+end
+arr = ["david", 1, 5, "mike"]
+arr.each do |elem|
+  puts elem
+end
+arr = ["david", 1, 5, "mike"]
+arr.each do |elem|
+  puts elem
+end
+:hello.class  
+"hello".class
+:hello.upcase
+:hello.downcase
+:hello << wow
+exit
+def add(a, b)
+  a + b
+end
+add(3, 4)
+exit
+input = 5
+input = "5"
+input.to_i
+input
+input = "quit"
+input = input.to_i
+input = gets.chomp
+exit
