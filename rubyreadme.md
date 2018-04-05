@@ -130,6 +130,12 @@ end
 
 Write a method called chopped that takes an array as an argument and returns an another array with the last element removed.
 
+```ruby
+def chopped(arr)
+  return arr.slice(0, arr.length - 1)
+end
+```
+
 #### how_big
 
 Define a method called how_big that takes a string as its lone parameter. The method returns:
@@ -137,6 +143,19 @@ Define a method called how_big that takes a string as its lone parameter. The me
 -   "small" if the string is less than 3 characters long
 -   "medium" if it is between 3 and 5 characters long
 -   "big" if it is greater than 5 characters long
+
+```ruby
+def how_big(str)
+  case
+  when str.length < 3
+    p "small"
+  when str.length > 5
+    p "big"
+  else
+    p "medium"
+  end
+end
+```
 
 #### Weatherman
 
@@ -148,19 +167,53 @@ Write a method that takes a weather condition and a temperature. Weather can be 
 -   If the condition is windy or the temperature is cold tell the user, "bundle up!"
 -   If the condition is windy and the temperature is hot, tell the user "Tornado warning!"
 
+```ruby
+def weatherman(cond, temp)
+  p "better stay inside!" if cond == "rainy" && temp == "cold"
+  p "sounds like a gross combination" if cond == "rainy" && temp == "hot"
+  p "maybe best to go swimming" if cond == "sunny" && temp == "hot"
+  p "bundle up!" if cond == "windy" || temp == "cold"
+  p "tornado warning!" if cond == "windy" && temp == "hot"
+end
+```
+
 #### The meaning of Life Write a method called `meaning_of_life` which returns the number 42 to you. Use this method to write a Ruby program that:
 
 -   Asks the user whether they want to know what the meaning of life is
 -   If the user enters 'y', then the meaning of life is displayed to them using the `meaning_of_life` method
 -   Otherwise, the program displays a disappointed message to the user and quits
 
+```ruby
+def meaning_of_life
+  return 42
+end
+
+puts "do you want to know the meaning of life? (y, n)"
+if gets.chomp == "y"
+  p meaning_of_life
+else
+  puts "you're... one of a kind."
+end
+
+```
+
 #### string_info
 
 Define a method called string_info that takes a string as a parameter and returns a hash with the following key-value pairs:
 
--   original: WHATEVER\_THE\_STRING_IS
+-   original: WHATEVER\_THE\_STRING\_IS
 -   length: WHATEVER\_THE\_LENGTH\_OF\_THE\_STRING\_IS
 -   snaked: the string in all lower case with spaces replaced by underscores, example (for example "Cool Dude" would look like "cool_dude")
+
+```ruby
+def string_info(str)
+  return output = {
+    original: str,
+    length: str.length,
+    snaked: str.downcase.split.join('_')
+  }
+end
+```
 
 #### Fives
 
@@ -184,6 +237,34 @@ After you've defined these methods, write out the rest of this app:
 -   Ask the user for the second value
 -   Use the four methods you defined to calculate the answer
 -   Display the answer to the user
+
+```ruby
+def add(a, b)
+  return a + b
+end
+
+def subtract(a, b)
+  return a - b
+end
+
+def multiply(a, b)
+  return a * b
+end
+
+def divide(a, b)
+  return b == 0 ? 0 : a.to_f / b
+end
+
+puts "what operation do you want to perform? (add / subtract / multiply / divide)"
+operation = gets.downcase.chomp.to_sym
+puts "enter first number"
+num_1 = gets.chomp.to_i
+puts "enter second number"
+num_2 = gets.chomp.to_i
+answer = send(operation, num_1, num_2)
+puts "answer: #{answer}"
+
+```
 
 #### Guessing Game Part Two
 

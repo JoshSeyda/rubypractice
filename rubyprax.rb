@@ -68,9 +68,64 @@
 #   return "#{person1.capitalize}, meet #{person2.capitalize}"
 # end
 
-def shout(str, *more)
-  puts str.upcase
-  more.each{ |str| puts str.upcase }
-end
+# def shout(str, *more)
+#   puts str.upcase
+#   more.each{ |str| puts str.upcase }
+# end
+#
+# shout("helloooooo", "is there anybody out thereee?", "yooo")
 
-shout("helloooooo", "is there anybody out thereee?", "yooo")
+# def chopped(arr)
+#   return arr.slice(0, arr.length - 1)
+# end
+
+# def how_big(str)
+#   case
+#   when str.length < 3
+#     p "small"
+#   when str.length > 5
+#     p "big"
+#   else
+#     p "medium"
+#   end
+# end
+#
+# how_big("helllooo")
+# how_big("hello")
+# how_big("hey")
+# how_big("hi")
+
+# def weatherman(cond, temp)
+#   p "better stay inside!" if cond == "rainy" && temp == "cold"
+#   p "sounds like a gross combination" if cond == "rainy" && temp == "hot"
+#   p "maybe best to go swimming" if cond == "sunny" && temp == "hot"
+#   p "bundle up!" if cond == "windy" || temp == "cold"
+#   p "tornado warning!" if cond == "windy" && temp == "hot"
+# end
+#
+# weatherman("rainy", "cold")
+# weatherman("rainy", "hot")
+# weatherman("sunny", "hot")
+# weatherman("windy", "cold")
+# weatherman("windy", "hot")
+
+# def meaning_of_life
+#   return 42
+# end
+#
+# puts "do you want to know the meaning of life? (y, n)"
+# if gets.chomp == "y"
+#   p meaning_of_life
+# else
+#   puts "you're... one of a kind."
+# end
+
+# def string_info(str)
+#   return output = {
+#     original: str,
+#     length: str.length,
+#     snaked: str.downcase.split.join('_')
+#   }
+# end
+#
+# string_info("HELLO WORLD")
