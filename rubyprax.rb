@@ -76,7 +76,7 @@
 # shout("helloooooo", "is there anybody out thereee?", "yooo")
 
 # def chopped(arr)
-#   return arr.slice(0, arr.length - 1)
+#   arr.slice(0, arr.length - 1)
 # end
 
 # def how_big(str)
@@ -110,7 +110,7 @@
 # weatherman("windy", "hot")
 
 # def meaning_of_life
-#   return 42
+#   42
 # end
 #
 # puts "do you want to know the meaning of life? (y, n)"
@@ -121,7 +121,7 @@
 # end
 
 # def string_info(str)
-#   return output = {
+#   output = {
 #     original: str,
 #     length: str.length,
 #     snaked: str.downcase.split.join('_')
@@ -129,3 +129,16 @@
 # end
 #
 # string_info("HELLO WORLD")
+
+def mult_five?(num)
+  num % 5 == 0
+end
+
+puts "enter a number or 'quit'"
+input = gets.chomp
+
+while input != "quit"
+  puts mult_five?(input.to_i)
+  puts "enter a number or 'quit'"
+  input = gets.chomp
+end

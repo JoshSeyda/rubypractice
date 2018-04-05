@@ -101,7 +101,7 @@ puts "Good job, you did it on try number #{counter}!"
 
 ```ruby
 def transmogrifier(n1, n2, n3)
-  return (n1 + n2) * n3
+  (n1 + n2) * n3
 end
 ```
 
@@ -111,7 +111,7 @@ Write a method called introduce that accepts two names as strings, and return a 
 
 ```ruby
 def introduce(person1, person2)
-  return "#{person1.capitalize}, meet #{person2.capitalize}"
+  "#{person1.capitalize}, meet #{person2.capitalize}"
 end
 ```
 
@@ -132,7 +132,7 @@ Write a method called chopped that takes an array as an argument and returns an 
 
 ```ruby
 def chopped(arr)
-  return arr.slice(0, arr.length - 1)
+  arr.slice(0, arr.length - 1)
 end
 ```
 
@@ -185,7 +185,7 @@ end
 
 ```ruby
 def meaning_of_life
-  return 42
+  42
 end
 
 puts "do you want to know the meaning of life? (y, n)"
@@ -207,7 +207,7 @@ Define a method called string_info that takes a string as a parameter and return
 
 ```ruby
 def string_info(str)
-  return output = {
+  output = {
     original: str,
     length: str.length,
     snaked: str.downcase.split.join('_')
@@ -219,7 +219,22 @@ end
 
 Write a method called `mult_five?` which accepts one number argument. Returns true if the argument is divisible by five, otherwise return false.
 
-Use this method within a while loop. Within the while loop, ask the user to enter a number or enter the word "quit". If the user enters a number, use mult_five? to check the number and let the user know if their number was divisible by five If the user entered quit, exit the program.
+Use this method within a while loop. Within the while loop, ask the user to enter a number or enter the word "quit". If the user enters a number, use mult_five? to check the number and let the user know if their number was divisible by five. If the user entered quit, exit the program.
+
+```ruby
+def mult_five?(num)
+  num % 5 == 0
+end
+
+puts "enter a number or 'quit'"
+input = gets.chomp
+
+while input != "quit"
+  puts mult_five?(input.to_i)
+  puts "enter a number or 'quit'"
+  input = gets.chomp
+end
+```
 
 #### Calculator
 
@@ -240,19 +255,19 @@ After you've defined these methods, write out the rest of this app:
 
 ```ruby
 def add(a, b)
-  return a + b
+  a + b
 end
 
 def subtract(a, b)
-  return a - b
+  a - b
 end
 
 def multiply(a, b)
-  return a * b
+  a * b
 end
 
 def divide(a, b)
-  return b == 0 ? 0 : a.to_f / b
+  b == 0 ? 0 : a.to_f / b
 end
 
 puts "what operation do you want to perform? (add / subtract / multiply / divide)"
