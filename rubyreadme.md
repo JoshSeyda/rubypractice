@@ -32,7 +32,7 @@ Fill out the table below by writing Ruby code to accomplish the following tasks:
 - Create a method that takes a string as an argument and adds the phrase "Only in America!" to the end of it
 ```ruby
 def merica(str)
-    puts str + " Only in America!"
+    puts "#{str} Only in America!"
 end
 merica("Deep fried icecream.")
 ```
