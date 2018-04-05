@@ -21,7 +21,7 @@ Fill out the table below by writing Ruby code to accomplish the following tasks:
 | Task | Javascript | Ruby |
 | ---- | ---------- | ---- |
 | Print out all numbers from 1-10 | `for (i = 1; i < 11; i++) {  console.log(i); }` | `for x in 1..10 do puts x.to_s end` |
-| Print out all the names in an array of objects  | `otherArray.forEach(function(el){ console.log(el.name) });` | `other_array.each do &#124;hash&#124; puts hash[:name] end` |
+| Print out all the names in an array of objects  | `otherArray.forEach(function(el){ console.log(el.name) });` | `other_array.each do &#124; hash &#124; puts hash[:name] end` |
 | Do something if a condition evaluates to `true` | `if ( aVariable === true ) { /* do a thing */ }` | `if a_variable == true  puts true end` |
 | Perform logic based on the value of a variable (control flow) | `if ( aVariable === 1 ) { /* do a certain thing */ } else if (aVariable === 2) { /* do a different thing */ } else { /* perform a default action */ }` | `if a_variable == true puts a_variable elsif a_variable == false puts a_variable.to_s*2 else puts "idk" end ` |
 
